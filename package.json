@@ -1,0 +1,11 @@
+{
+  "name": "flexx",
+  "version": "1.0.0",
+  "description": "flexx is a small javaScript library with some features",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Abu Huraira Khan",
+  "license": "ISC"
+}
