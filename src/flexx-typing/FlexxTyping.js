@@ -1,10 +1,10 @@
-class FlexxTyping {
+export class FlexxTyping {
     constructor(element,elemSetting) {
-        const domElement = document.querySelector(element);
-        this.domElement = domElement;
-
         const setting = {loop:false,cursor:true,...elemSetting};
         this.setting = setting;
+
+        const domElement = this.setting.domSyntax==='react'?element:document.querySelector(element);
+        this.domElement = domElement;
         this.autoType();
     }
 
@@ -15,7 +15,7 @@ class FlexxTyping {
         let adding = true; // Flag to indicate if we are adding or removing text
 
         // default cursor
-        const domElemObj = window.getComputedStyle(this.domElement,null);
+        const domElemObj = this.setting.domSyntax==='react'?this.domElement.computedStyleMap():window.getComputedStyle(this.domElement,null);
         const getElemFontSize =domElemObj.getPropertyValue('font-size');
         const cursor = document.createElement('span');
         cursor.className = 'cursor';
@@ -54,7 +54,11 @@ class FlexxTyping {
             if(!this.setting.cursor){
                 return;
             }
-            this.domElement.appendChild(cursor); // Ensure cursor is always at the end
+            if (this.setting.cursor) {
+                if (!this.domElement.contains(this.cursor)) {
+                    this.domElement.appendChild(this.cursor);
+                }
+            } // Ensure cursor is always at the end
         }, this.setting.speed);
     }
 }

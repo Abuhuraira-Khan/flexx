@@ -1,10 +1,17 @@
 {
   "name": "flexx",
-  "version": "1.0.0",
-  "description": "flexx is a small javaScript library with some features",
+  "version": "1.1.0",
+  "description": "Flexx is a handy JavaScript library that makes it easy to add interactive and dynamic elements to your web projects. It's designed to help you create a more engaging and smooth user experience with minimal effort.",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
+  "keywords": [
+    "javascript",
+    "library",
+    "flexx",
+    "flexx js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abuhuraira-Khan/flexx.git"
   },
   "author": "Abu Huraira Khan",
   "license": "ISC"
