@@ -15,7 +15,7 @@ export class FlexxTyping {
         let adding = true; // Flag to indicate if we are adding or removing text
 
         // default cursor
-        const domElemObj = this.setting.domSyntax==='react'?this.domElement.computedStyleMap():window.getComputedStyle(this.domElement,null);
+        const domElemObj =window.getComputedStyle(this.domElement,null);
         const getElemFontSize =domElemObj.getPropertyValue('font-size');
         const cursor = document.createElement('span');
         cursor.className = 'cursor';
